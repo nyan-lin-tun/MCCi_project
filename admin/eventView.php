@@ -2,7 +2,7 @@
 include 'auth.php';
 require 'connectdb.php';
 
-$id = $_GET['id'];
+$id = $_GET['event_id'];
 
 $sql = "SELECT event.*,event_type.event_type_name FROM event,event_type WHERE event_id = $id";
 
@@ -29,7 +29,7 @@ $row = mysqli_fetch_assoc($event);
 			<img src="../../cover/<?php echo $row['cover']; ?>" alt="" height="200">
 			<h2><?php echo $row['event_name']; ?></h2>
 			<b><?php echo "Type: ".$row['event_type_name']; ?></b><br>
-			<i><?php echo "Price : $".$row['ticket_price']; ?></i>
+			<b><?php echo "Price : ".$row['ticket_price']; ?></b>
 			<p><?php echo $row['event_description']; ?></p>
 			</center>
 		</div>
