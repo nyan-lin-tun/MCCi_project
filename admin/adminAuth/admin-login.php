@@ -6,7 +6,7 @@
 
 	if($name == "admin" and $password == "admin") { 
 		$_SESSION['auth'] = true;
-		header("location: ../books/book-list.php");
+		header("location: ../newEvent.php");
 	} else {
 		header("location: ../index.php");
 	} 
