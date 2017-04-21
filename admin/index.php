@@ -14,15 +14,12 @@
 	</style>
 </head>
 <body>
-	
-	
-	
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<center>
 					<div id="imgDiv">
-						<img src="img/superman.png" alt="Superman" width="100" height="100">	
+						<img src="../img/superman.png" alt="Superman" width="100" height="100">	
 						<h1>Dashboard</h1>
 						<b><h4>Hello, good to see you!</h4></b>
 					</div>

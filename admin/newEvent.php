@@ -22,11 +22,15 @@
           <label for="name">Event name</label>
           <input type="text" class="form-control" id="name" name="name" placeholder="" required>
         </div>
+        <div class="form-group">
+          <label for="date">Event date</label>
+          <input type="date" class="form-control" id="date" name="date" required>
+        </div>
 
         <div class="form-group">
           <label for="category_id">Category</label>
 
-          <select name="category_id" id="category_id" class="form-control">
+          <select name="category_id" id="category_id" class="form-control" required>
 
             <option value="0">-- Choose event type--</option>
             <?php 

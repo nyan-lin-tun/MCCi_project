@@ -9,7 +9,7 @@ if(!isset($_SESSION['auth'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Category List</title>
+	<title>Category Lists</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
@@ -18,37 +18,35 @@ if(!isset($_SESSION['auth'])) {
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
 			<center>
-				<h1><u><b>Event List</b></u></h1>
+				<h1><u><b>Event Type List</b></u></h1>
 				<br>
-				<a href="newEvent.php"><button class="btn btn-success">New event</button></a>
+				<a href="newEventType.php"><button class="btn btn-success">New event type</button></a>
 			</center>
-			<?php
-			include 'connectdb.php';
-			$sql = "SELECT event.*,event_type.event_type_name FROM event,event_type WHERE event.event_type_id = event_type.event_type_id";
-			$result = mysqli_query($mysqli,$sql);
+			<?php 
+			include 'eventTypeProcess.php';
+
+			$categories = readEventType();
+
 			?>
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Category</th>
-						<th>Price</th>
+						<th>Event type</th>
+						<th>Description</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php while ($row = mysqli_fetch_assoc($result)) : ?>
+					<?php foreach ($categories as $category): ?>
 						<tr>                                   
-							<td><h4><?php echo $row['event_name'] ?></h4></td>
-							<td><h4><?php echo $row['event_type_name']; ?></h4></td>
-							<td><h4><?php echo $row['ticket_price']; ?></h4></td>
+							<td><h4><?php echo $category->event_type_name ?></h4></td>
+							<td><h4><?php echo $category->event_type_desc ?></h4></td>
 							<td>                                
-								<a href="eventView.php?event_id=<?php echo $row['event_id']; ?>"><button class="btn btn-success">View</button></a>
-								<a href="eventEdit.php?event_id=<?php echo $row['event_id']; ?>"><button class="btn btn-info">Edit</button></a>
-								<a href="deleteEvent.php?event_id=<?php echo $row['event_id']; ?>"><button class="btn btn-danger">Delete</button></a>
+								<a href="eventTypeEdit.php?event_type_id=<?php echo $category->event_type_id; ?>"><button class="btn btn-info">Edit</button></a>
+								<a href="eventTypeDelete.php?event_type_id=<?php echo $category->event_type_id; ?>"><button class="btn btn-danger">Delete</button></a>
 							</td>
 						</tr>
-					<?php endwhile ?>
+					<?php endforeach ?>
 				</tbody>
 			</table>
 		</div>

@@ -68,7 +68,7 @@ include 'auth.php';
           <input type="file" name="cover" class="form-control" id="cover">
         </div>
         
-        <button name="btnlogin" value="Login" type="submit" class="btn btn-primary">Create</button>
+        <button name="btnlogin" value="Login" type="submit" class="btn btn-primary">Update</button>
         <button type="reset" class="btn btn-danger" name="btncancel" value="Exit">Clear</button>
 
       </form>

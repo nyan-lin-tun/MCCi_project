@@ -30,7 +30,8 @@ $row = mysqli_fetch_assoc($event);
 			<h2><?php echo $row['event_name']; ?></h2>
 			<b><?php echo "Type: ".$row['event_type_name']; ?></b><br>
 			<b><?php echo "Price : ".$row['ticket_price']; ?></b>
-			<p><?php echo $row['event_description']; ?></p>
+			<p><?php echo $row['event_description']; ?></p><br>
+			<p><?php echo $row['event_start_date']; ?></p>
 			</center>
 		</div>
 		<div class="col-md-3"></div>

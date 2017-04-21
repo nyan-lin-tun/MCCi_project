@@ -40,12 +40,4 @@
     $tmp = $_FILES['cover']['tmp_name'];
 
     updateEvent($id, $title, $category_id, $description, $price, $cover, $tmp);
-
-
-
-
-
-
-
-
  ?>

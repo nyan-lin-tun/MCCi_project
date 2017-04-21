@@ -24,7 +24,7 @@ if(!isset($_SESSION['auth'])) {
 			</center>
 			<?php
 			include 'connectdb.php';
-			$sql = "SELECT event.*,event_type.event_type_name FROM event,event_type WHERE event.event_type_id = event_type.event_type_id";
+			$sql = "SELECT event.*,event_type.event_type_name FROM event LEFT JOIN event_type ON event.event_type_id = event_type.event_type_id ORDER BY event.created_date DESC";
 			$result = mysqli_query($mysqli,$sql);
 			?>
 			<table class="table">
@@ -32,6 +32,7 @@ if(!isset($_SESSION['auth'])) {
 					<tr>
 						<th>Name</th>
 						<th>Category</th>
+						<th>Start Date</th>
 						<th>Price</th>
 						<th>Action</th>
 					</tr>
@@ -41,6 +42,7 @@ if(!isset($_SESSION['auth'])) {
 						<tr>                                   
 							<td><h4><?php echo $row['event_name'] ?></h4></td>
 							<td><h4><?php echo $row['event_type_name']; ?></h4></td>
+							<td><h4><?php echo $row['event_start_date']; ?></h4></td>
 							<td><h4><?php echo $row['ticket_price']; ?></h4></td>
 							<td>                                
 								<a href="eventView.php?event_id=<?php echo $row['event_id']; ?>"><button class="btn btn-success">View</button></a>

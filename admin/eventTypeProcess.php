@@ -31,15 +31,26 @@ function readEventType(){
 
 }
 
+function readSingleEventType($id){
 
+	require 'connectdb.php';
 
+	$sql = "SELECT * FROM event_type WHERE event_type_id = " . $id;
 
+	$result = $mysqli->query($sql);
 
+	if ($result->num_rows > 0) {
 
+		return $result->fetch_object();
 
+	} else {
 
+		echo $mysqli->error;
 
+	}
 
+	$mysqli->close();
 
+}
 
 ?>
