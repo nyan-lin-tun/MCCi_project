@@ -23,7 +23,7 @@
 				header('Location: ../index.php');	
 			}else{
 				// $message = '<div class="alert alert-danger">Please Register!</div>';
-				$message = "pl";
+				$message = "";
 			}
 
 		}else{

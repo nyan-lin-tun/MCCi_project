@@ -45,7 +45,7 @@ $cats = mysqli_query($mysqli,"SELECT * FROM event_type");
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="view-cart.php">(<?php echo $cart ?>) ticket(s) in your cart</a></li>
+				<li><a href="check_cart.php">(<?php echo $cart ?>) ticket(s) in your cart</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
@@ -70,8 +70,8 @@ $cats = mysqli_query($mysqli,"SELECT * FROM event_type");
 							<a href="event_detail.php?event_id=<?php echo $event['event_id']; ?>"><img src="cover/<?php echo $event['event_img']; ?>" alt="" width="110" height="150"></a>
 							<br>
 							<h2><?php echo $event['event_name']; ?></h2>
-							<h4><?php echo "$".$event['ticket_price']; ?></h4>
-							<a href="add_to_cart.php?id=<?php echo $event['event_id']; ?>" class="btn btn-info">Add To Cart</a>
+							<h4><?php echo "Price : ".$event['ticket_price']; ?></h4>
+							<a href="add_to_cart.php?event_id=<?php echo $event['event_id']; ?>" class="btn btn-info">Add To Cart</a>
 							<hr>
 						</section>
 					<?php endforeach ?>

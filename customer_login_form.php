@@ -17,7 +17,7 @@
 			
 			if ($result->num_rows > 0) {
 				$customer = $result->fetch_object();
-				$_SESSION['user_id'] = $customer->id;
+				$_SESSION['user_id'] = $customer->user_id;
 				$_SESSION['user'] = true;
 				header('location: index.php');	
 			}else{
@@ -62,7 +62,7 @@
 					<button name="login" value="Login" type="submit" class="btn btn-primary">Login</button>
 					<button type="reset" class="btn btn-danger" name="btncancel" value="Exit">Clear</button>
 					<br>
-					<a href="customerRegister.php"><u>Don't have an account. Sign up</u></a>
+					<a href="customer/customerRegister.php"><u>Don't have an account. Sign up</u></a>
 
 				</form>
 				<?php echo $message; ?>

@@ -1,3 +1,10 @@
+<?php
+session_start(); 
+if(!isset($_SESSION['auth'])) {
+  header("location: ../index.php");
+  exit(); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +61,7 @@
 
         <div class="form-group">
           <label for="price">Ticket price</label>
-          <input type="text" name="price" class="form-control" id="price">
+          <input type="text" name="price" class="form-control" id="price" required>
         </div>
 
         <div class="form-group">
